@@ -1,5 +1,5 @@
 <form action="ingresar-venta.php" method="post">
-    <button name="btnIngresarFactura" type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus"></i></button>
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus"></i></button>
 </form>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -26,7 +26,9 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Guardar</button>
+                <form action="ingresar-venta.php" method="post">
+                    <button type="submit" class="btn btn-outline-secondary" data-bs-dismiss="modal" name="btnIngresarFactura">Guardar</button>
+                </form>
             </div>
         </div>
     </div>
