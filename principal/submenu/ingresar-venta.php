@@ -58,7 +58,7 @@ include("../../conexiones/abrir.php");
                     //ingresando factura
             if (isset($_POST['btnIngresarFactura'])) {
                 $_fecVenta = $_POST['fechaventa'];
-                $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES('$_fecVenta')");
+                $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
                 $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
                 $rowFactura  = mysqli_fetch_array($Facturacion);
                 $Factura = $rowFactura['Nfactura'];
