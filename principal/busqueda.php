@@ -3,18 +3,9 @@ include("../estructura/superior.php");
 include("../conexiones/abrir.php");
 ?>
 <?php
-
 if (isset($_POST['btnbuscar'])) {
     $_id = $_POST['id'];
 
-
-    if (isset($_POST['btnIngresarFactura'])) {
-        $_fecVenta = $_POST['fechaventa'];
-        $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
-    }
-    $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
-    $rowFactura  = mysqli_fetch_array($Facturacion);
-    $Factura = $rowFactura['Nfactura'];
 
     $registros = mysqli_query($conexion, "SELECT * FROM $tbcliente WHERE idCl = '$_id'");
     while ($consulta = mysqli_fetch_array($registros)) {
@@ -89,9 +80,16 @@ if (isset($_POST['btnbuscar'])) {
                                         <center><?= $consulta['user'] ?></center>
                                     </td>
                                     <td>
-                                        <center>
+                                        <center><?php
+                                                $_POST['btnIngresarFactura'];
+                                                $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
+                                                $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
+                                                $rowFactura  = mysqli_fetch_array($Facturacion);
+
+                                                $Factura = $rowFactura['Nfactura'];
+                                                ?>
                                             <form action="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>?idfactura=<?php echo $Factura; ?>" method="post">
-                                            <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
+                                                <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
                                             </form>
                                         </center>
                                     </td>

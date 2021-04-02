@@ -48,7 +48,7 @@ include("../../conexiones/abrir.php");
                     </table>
                 </div>
                 <br>
-                <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>?idfactura=<?php echo $Factura; ?>" method="post">
+                <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>" method="post">
                     <?php require_once("../../estructura/ModalIngresarVenta.php"); //formulario ingresar venta
                     ?>
                     <input type="submit" value="Ingresar Venta" class="btn btn-outline-primary" name="btningresarVenta">
@@ -61,10 +61,9 @@ include("../../conexiones/abrir.php");
             if (isset($_POST['btningresarVenta'])) {
                 $_cantidadU = $_POST['CantidadUnidad'];
                 $_id = $_GET['id'];
-                $_fecVenta = $_POST['fechaventa'];
                 $_idprod = $_POST['idprod'];
                 $_Total = $valorP['precioVenta'] * $_cantidadU;
-                $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$Temp','$_id','$_idprod','$Factura')");
+                $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES(CURDATE(),'$_cantidadU','$Temp','$_id','$_idprod','$Factura')");
                 echo "Venta ingresada, Total: " . $_Total;
             ?>
             <?php
