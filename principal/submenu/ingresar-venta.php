@@ -57,21 +57,27 @@ include("../../conexiones/abrir.php");
             <?php
 
             if (isset($_POST['btnIngresarFactura'])) {
+                $_fecVenta = $_POST['fechaventa'];
+                $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES('$_fecVenta')");
+                $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
+
+
+
+
                 $consulta = mysqli_query($conexion, "SELECT * FROM productos");
                 $valorP = mysqli_fetch_array($consulta);
                 if (isset($_POST['btningresarVenta'])) {
-                    $_fecVenta = $_POST['fechaventa'];
                     $_cantidadU = $_POST['CantidadUnidad'];
                     $_id = $_GET['id'];
                     $_idprod = $_POST['idprod'];
                     $_Total = $valorP['precioVenta'] * $_cantidadU;
                     $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$Temp','$_id','$_idprod','$Factura')");
                     echo "Venta ingresada, Total: " . $_Total;
-                ?>
-                <?php
+            ?>
+            <?php
                 }
-                ?>
             }
+            ?>
         </div>
     </div>
 </div>
