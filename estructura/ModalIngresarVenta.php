@@ -27,7 +27,7 @@
             </div>
             <div class="modal-footer">
                 <form action="ingresar-venta.php" method="post">
-                    <button type="submit" class="btn btn-outline-secondary" data-bs-dismiss="modal" name="btnIngresarFactura">Guardar</button>
+                    <button type="submit" class="btn btn-outline-secondary" data-bs-dismiss="modal">Guardar</button>
                 </form>
             </div>
         </div>
