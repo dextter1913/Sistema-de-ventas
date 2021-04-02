@@ -62,26 +62,9 @@ include("../../conexiones/abrir.php");
                 $_cantidadU = $_POST['CantidadUnidad'];
                 $_id = $_GET['id'];
                 $_idprod = $_POST['idprod'];
-
-                $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES('$_fecVenta')");
-                $consultaF = mysqli_query($conexion, "SELECT * FROM facturaVentas");
-                $consultaFactura = mysqli_fetch_array($consultaF);
-
-                $Factura = $consultaFactura['Nfactura'];
-                if ($Factura > 0) {
-                    while ($Factura > 0) {
-                        $Temp = $valorP['precioVenta'] * $_cantidadU;
-                        $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$Temp','$_id','$_idprod','$Factura')");
-                        $_Total = $_Total + $Temp;
-                        echo "Venta ingresada, Total: " . $_Total;
-                        $Factura = 0;
-                    }
-                    $nfactura = $consultaFactura['Nfactura'];
-                    $conexion->query("UPDATE facturaVentas SET ValorFactura = '$_Total'  WHERE Nfactura = '$nfactura'");
-                } else {
-                    echo "Error al almacenar factura";
-                }
-                //terminar ciclo
+                $_Total = $valorP['precioVenta'] * $_cantidadU;
+                $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$Temp','$_id','$_idprod','$Factura')");
+                echo "Venta ingresada, Total: " . $_Total;
             ?>
             <?php
             }
