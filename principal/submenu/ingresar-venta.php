@@ -87,26 +87,6 @@ include("../../conexiones/abrir.php");
             }
             ?>
         </div>
-<<<<<<< HEAD
-        <?php
-        $consulta = mysqli_query($conexion, "SELECT * FROM productos");
-        $valorP = mysqli_fetch_array($consulta);
-        if (isset($_POST['btningresarVenta'])) {
-            $_fecVenta = $_POST['fechaventa'];
-            $_cantidadU = $_POST['CantidadUnidad'];
-            $_id = $_GET['id'];
-            $_idprod = $_POST['idprod'];
-            $_Total = $valorP['precioVenta'] * $_cantidadU;
-            $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto) VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod')");
-            echo "Venta ingresada, Total: " . $_Total;
-        ?>
-        <?php
-        }
-        
-        ?>
-=======
-        <div class="col-md-2"></div>
->>>>>>> e30734a1d50e737e99f60841e4f6ecfb3bdd5c05
     </div>
 </div>
 
