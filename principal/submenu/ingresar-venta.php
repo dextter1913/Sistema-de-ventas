@@ -60,7 +60,8 @@ include("../../conexiones/abrir.php");
                 $_fecVenta = $_POST['fechaventa'];
                 $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES('$_fecVenta')");
                 $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
-
+                $rowFactura  = mysqli_fetch_array($Facturacion);
+                $Factura = $rowFactura['Nfactura'];
 
 
 
