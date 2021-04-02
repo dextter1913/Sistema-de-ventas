@@ -1,19 +1,26 @@
 <?php
 include("../estructura/superior.php");
+include("../conexiones/abrir.php");
 ?>
 <?php
 
 if (isset($_POST['btnbuscar'])) {
     $_id = $_POST['id'];
 
-    include("../conexiones/abrir.php");
+
+    if (isset($_POST['btnIngresarFactura'])) {
+        $_fecVenta = $_POST['fechaventa'];
+        $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
+    }
+    $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
+    $rowFactura  = mysqli_fetch_array($Facturacion);
+    $Factura = $rowFactura['Nfactura'];
 
     $registros = mysqli_query($conexion, "SELECT * FROM $tbcliente WHERE idCl = '$_id'");
     while ($consulta = mysqli_fetch_array($registros)) {
 ?>
         <div class="container">
             <div class="row">
-
                 <div class="col-12 col-md-12"></div>
                 <div class="col-12 col-md-12">
                     <div class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -82,7 +89,11 @@ if (isset($_POST['btnbuscar'])) {
                                         <center><?= $consulta['user'] ?></center>
                                     </td>
                                     <td>
-                                        <center><a href="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>"><button class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i></button></a></center>
+                                        <center>
+                                            <form action="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>?idfactura=<?php echo $Factura; ?>" method="post">
+                                            <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
+                                            </form>
+                                        </center>
                                     </td>
                                 </tr>
                             </table>
