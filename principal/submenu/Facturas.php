@@ -44,13 +44,17 @@ if (isset($_POST['btnregistrarventa'])) {
                                         <td><?php echo $rows['fechaFactura']; ?></td>
                                     </tr>
                                 <?php
+                                $total = $total + $rows['totalV'];
                                 }
                                 include("../../conexiones/cerrar.php");
                                 ?>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th></th>
+                                    <th>Total</th>
+                                </tr>
+                                <tr>
+                                <td><?php echo $total;?></td>
                                 </tr>
                             </tfoot>
                         </table>
