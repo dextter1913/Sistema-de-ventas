@@ -10,7 +10,7 @@ include("../../conexiones/abrir.php");
         <div class="col-md-1 col-lg-2"></div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-3">
             <div class="shadow p-3 mb-5 bg-body rounded">
-                <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>" method="post">
+                <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
                     <label for="NombreProducto">Ingrese Nombre del Producto:</label>
                     <input type="text" name="nombreproducto" id="NombreProducto" class="form-control" placeholder="Buscar"><br>
                     <input type="submit" value="Buscar" class="btn btn-outline-primary" name="btnBuscarProductoV">
