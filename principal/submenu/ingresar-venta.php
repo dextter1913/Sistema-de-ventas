@@ -2,7 +2,6 @@
 include("../../estructura/menu2.php");
 include("../../conexiones/abrir.php");
 ?>
-
 <div class="row">
     <center>
         <h1><i>Ingresar Venta</i></h1>
@@ -57,6 +56,7 @@ include("../../conexiones/abrir.php");
             </div>
         </div>
         <?php
+        $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
         $consulta = mysqli_query($conexion, "SELECT * FROM productos");
         $valorP = mysqli_fetch_array($consulta);
         if (isset($_POST['btningresarVenta'])) {

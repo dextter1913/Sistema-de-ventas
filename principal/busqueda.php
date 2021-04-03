@@ -80,14 +80,13 @@ if (isset($_POST['btnbuscar'])) {
                                         <center><?= $consulta['user'] ?></center>
                                     </td>
                                     <td>
-                                        <center><?php
-                                                $_POST['btnIngresarFactura'];
-                                                $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
-                                                $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
-                                                $rowFactura  = mysqli_fetch_array($Facturacion);
-
-                                                $Factura = $rowFactura['Nfactura'];
-                                                ?>
+                                        <center>
+                                            <?php
+                                            $_POST['btnIngresarFactura'];
+                                            $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
+                                            $rowFactura  = mysqli_fetch_array($Facturacion);
+                                            $Factura = $rowFactura['Nfactura'];
+                                            ?>
                                             <form action="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>&idfactura=<?php echo $Factura; ?>" method="post">
                                                 <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
                                             </form>
