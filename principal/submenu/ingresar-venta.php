@@ -6,8 +6,8 @@ include("../../conexiones/abrir.php");
     <center>
         <h1><i>Ingresar Venta</i></h1>
     </center>
-    <div class="col-md-2"></div>
-    <div class="col-6 col-md-3">
+    <div class="col-md-1 col-lg-2"></div>
+    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>" method="post">
                 <label for="NombreProducto">Ingrese Nombre del Producto:</label>
@@ -16,7 +16,7 @@ include("../../conexiones/abrir.php");
             </form>
         </div>
     </div>
-    <div class="col-6 col-md-5">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -81,7 +81,7 @@ include("../../conexiones/abrir.php");
         }
         ?>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-1 col-lg-1"></div>
 </div>
 
 <?php
