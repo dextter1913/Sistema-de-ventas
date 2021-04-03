@@ -32,7 +32,7 @@
                 <a class="nav-link" href="../ventas.php">Ventas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../buscar-venta.php">Buscar Venta</a>
+                <a class="nav-link" href="../buscar-factura.php">Buscar Factura</a>
               </li>
             </ul>
             <form action="../busqueda.php" method="post" class="d-flex">
