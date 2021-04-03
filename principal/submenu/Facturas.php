@@ -5,16 +5,10 @@ include("../../conexiones/abrir.php");
 <?php
 if (isset($_POST['btnregistrarventa'])) {
     $criterio = $_POST['criterio'];
-
-
     if ($criterio == "") {
         header("location:../buscar-venta.php");
     } else {
-        $registros = mysqli_query($conexion, "SELECT nomProd, categoria, cantidad, totalV, nombreCl, apellidoCl, Nfactura, fechaFactura FROM venta 
-        INNER JOIN productos ON productos.idProd = venta.producto 
-        INNER JOIN cliente ON cliente.idCl = venta.cliente 
-        INNER JOIN facturaVentas ON facturaVentas.Nfactura = venta.Factura
-        WHERE Factura = '$criterio'");
+        require_once("../../conexiones/ConsultaFacturas.php");
 ?>
 
         <div class="row">
@@ -44,7 +38,7 @@ if (isset($_POST['btnregistrarventa'])) {
                                         <td><?php echo $rows['fechaFactura']; ?></td>
                                     </tr>
                                 <?php
-                                $total = $total + $rows['totalV'];
+                                    $total = $total + $rows['totalV'];
                                 }
                                 include("../../conexiones/cerrar.php");
                                 ?>
@@ -54,7 +48,7 @@ if (isset($_POST['btnregistrarventa'])) {
                                     <th>Total</th>
                                 </tr>
                                 <tr>
-                                <td><?php echo $total;?></td>
+                                    <td><?php echo $total; ?></td>
                                 </tr>
                             </tfoot>
                         </table>
