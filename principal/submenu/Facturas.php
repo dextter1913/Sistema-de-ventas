@@ -10,62 +10,55 @@ if (isset($_POST['btnregistrarventa'])) {
     if ($criterio == "") {
         header("location:../buscar-venta.php");
     } else {
-        $registros = mysqli_query($conexion, "SELECT * FROM $tbproductos WHERE idProd = '$criterio'");
-        while ($consulta = mysqli_fetch_array($registros)) {
+        $registros = mysqli_query($conexion, "SELECT nomProd, categoria, cantidad, totalV, nombreCl, apellidoCl, Nfactura, fechaFactura FROM venta 
+        INNER JOIN productos ON productos.idProd = venta.producto 
+        INNER JOIN cliente ON cliente.idCl = venta.cliente 
+        INNER JOIN facturaVentas ON facturaVentas.Nfactura = venta.Factura
+        WHERE Factura = '$criterio'");
 ?>
 
-            <div class="row">
-                <div class="col-1 col-md-1"></div>
-                <div class="col-10 col-md-10">
-                    <div class="shadow-lg p-3 mb-5 bg-body rounded">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th scope="col">
-                                            <center> ID Producto</center>
-                                        </th>
-                                        <th scope="col">
-                                            <center>Nombre Producto</center>
-                                        </th>
-                                        <th scope="col">
-                                            <center>Precio</center>
-                                        </th>
-                                        <th scope="col">
-                                            <center>Categoria</center>
-                                        </th>
-                                        <th scope="col">
-                                            <center>Usuario</center>
-                                        </th>
-                                    </tr>
-                                </thead>
+        <div class="row">
+            <div class="col-1 col-md-1"></div>
+            <div class="col-10 col-md-10">
+                <div class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
                                 <tr>
-                                    <td>
-                                        <center><?= $consulta['idProd'] ?></center>
-                                    </td>
-                                    <td>
-                                        <center><?= $consulta['nomProd'] ?></center>
-                                    </td>
-                                    <td>
-                                        <center><?= $consulta['precioProd'] ?></center>
-                                    </td>
-                                    <td>
-                                        <center><?= $consulta['categoria'] ?></center>
-                                    </td>
-                                    <td>
-                                        <center><?= $consulta['usuario'] ?></center>
-                                    </td>
+                                    <th>Producto</th>
+                                    <th>Tipo</th>
+                                    <th>Cantidad Unidad</th>
+                                    <th>Total</th>
+                                    <th>Fecha Factura</th>
                                 </tr>
-                            </table>
-                        </div>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($rows = mysqli_fetch_array($registros)) {
+                                ?>
+                                    <tr>
+                                        <td><?php echo $rows['nomProd']; ?></td>
+                                        <td><?php echo $rows['categoria']; ?></td>
+                                        <td><?php echo $rows['cantidad']; ?></td>
+                                        <td><?php echo $rows['totalV']; ?></td>
+                                        <td><?php echo $rows['fechaFactura']; ?></td>
+                                    </tr>
+                                <?php
+                                }
+                                include("../../conexiones/cerrar.php");
+                                ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-                    <div class="col-1 col-md-1"></div>
                 </div>
+                <div class="col-1 col-md-1"></div>
             </div>
-        <?php
-        }
-        include("../../conexiones/cerrar.php");
-        ?>
+        </div>
         <div class="row">
             <div class="col-3 col-md-4"></div>
             <div class="col-6 col-md-4">
