@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form action="reporte/reporte.php" method="post">
+                    <form action="reporte/reporte.php" target="_BLANK" method="post">
                         <div class="row">
                             <div class="col-12 col-sm-3 col-md-2 col-lg-1"></div>
                             <div class="col-12 col-sm-3 col-md-4 col-lg-5">
