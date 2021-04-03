@@ -1,5 +1,6 @@
 <?php
 include("../../estructura/menu2.php");
+include("../../conexiones/abrir.php");
 ?>
 <?php
 if (isset($_POST['btnregistrarventa'])) {
@@ -9,7 +10,6 @@ if (isset($_POST['btnregistrarventa'])) {
     if ($criterio == "") {
         header("location:../buscar-venta.php");
     } else {
-        include("../../conexiones/abrir.php");
         $registros = mysqli_query($conexion, "SELECT * FROM $tbproductos WHERE idProd = '$criterio'");
         while ($consulta = mysqli_fetch_array($registros)) {
 ?>
