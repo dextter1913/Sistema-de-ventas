@@ -56,7 +56,10 @@ include("../../conexiones/abrir.php");
             </div>
         </div>
         <?php
+        //inserta una nueva factura por adelantado
         $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
+
+        //insertar ventas en la factura
         $consulta = mysqli_query($conexion, "SELECT * FROM productos");
         $valorP = mysqli_fetch_array($consulta);
         if (isset($_POST['btningresarVenta'])) {

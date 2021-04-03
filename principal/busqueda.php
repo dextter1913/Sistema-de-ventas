@@ -82,6 +82,7 @@ if (isset($_POST['btnbuscar'])) {
                                     <td>
                                         <center>
                                             <?php
+                                            //Busca el ultimo ID de factura generado
                                             $_POST['btnIngresarFactura'];
                                             $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
                                             $rowFactura  = mysqli_fetch_array($Facturacion);
