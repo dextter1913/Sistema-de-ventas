@@ -70,6 +70,7 @@ include("../../conexiones/abrir.php");
                 $_idfactura = $_GET['idfactura'];
                 $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod','$_idfactura')");
                 echo "Venta ingresada, Total: " . $_Total . "<br>";
+                echo "el Numero de Factura es: <b>".$_idfactura."</b>";
             ?>
             <?php
             }
