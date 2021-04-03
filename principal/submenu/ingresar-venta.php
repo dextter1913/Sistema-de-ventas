@@ -47,13 +47,11 @@ include("../../conexiones/abrir.php");
                 </table>
             </div>
             <br>
-            <div class="container">
                 <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
                     <?php require_once("../../estructura/ModalIngresarVenta.php"); //formulario ingresar venta
                     ?>
                     <input type="submit" value="Ingresar Venta" class="btn btn-outline-primary" name="btningresarVenta">
                 </form>
-            </div>
         </div>
         <?php
         //inserta una nueva factura por adelantado
