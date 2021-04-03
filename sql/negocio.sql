@@ -109,7 +109,7 @@ CREATE TABLE venta(
     totalV FLOAT (25) NOT NULL,
     cliente VARCHAR (20) NOT NULL,
     producto INTEGER (20) NOT NULL,
-    Factura INTEGER (25),
+    Factura INTEGER (25) NULL,
     index(cliente),
     FOREIGN KEY (cliente) REFERENCES cliente(idCl),
     index(producto),

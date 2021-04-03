@@ -24,7 +24,8 @@
                         </div><br>
                         <div class="row">
                             <div class="col-12 col-md-6"></div>
-                            <div class="col-12 col-md-4"><button class="btn btn-outline-success" name="btnreportepdf">PDF</button> </div>
+                            <div class="col-12 col-md-4"><button class="btn btn-outline-success" name="btnreportepdf">PDF</button>
+                            </div>
                             <div class="col-12 col-md-2"></div>
                         </div>
                     </form>

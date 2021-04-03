@@ -88,7 +88,7 @@ if (isset($_POST['btnbuscar'])) {
 
                                                 $Factura = $rowFactura['Nfactura'];
                                                 ?>
-                                            <form action="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>?idfactura=<?php echo $Factura; ?>" method="post">
+                                            <form action="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>&idfactura=<?php echo $Factura; ?>" method="post">
                                                 <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
                                             </form>
                                         </center>

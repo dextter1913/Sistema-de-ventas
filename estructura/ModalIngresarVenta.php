@@ -1,6 +1,4 @@
-<form action="ingresar-venta.php" method="post">
-    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus"></i></button>
-</form>
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus"></i></button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -26,9 +24,7 @@
 
             </div>
             <div class="modal-footer">
-                <form action="ingresar-venta.php" method="post">
-                    <button type="submit" class="btn btn-outline-secondary" data-bs-dismiss="modal">Guardar</button>
-                </form>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Guardar</button>
             </div>
         </div>
     </div>
