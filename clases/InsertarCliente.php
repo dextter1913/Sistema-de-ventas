@@ -1,7 +1,7 @@
 <?php 
 require_once 'Conexion.php';
 require_once 'Persona.php';
-    class Cliente extends Persona
+    class InsertarCliente extends Persona
     {
         private $_usuario;
 
@@ -17,7 +17,7 @@ require_once 'Persona.php';
             $this->_usuario  = $_usuario;
         }
         //insertando datos llamando la clase conexion 
-        public function InsertarCliente(){
+        public function Insertar(){
             $_id =$this->_id;
             $_nombre=$this->_nombre;
             $_apellido = $this->_apellido;
