@@ -1,4 +1,4 @@
-<?php 
+<?php
 $host = "atlaz.cvcpedzqpzzg.us-east-2.rds.amazonaws.com";
 $user = "admin";
 $pass = "12345678";
@@ -13,4 +13,3 @@ error_reporting(0);
 if ($conexion->connect_errno) {
     echo "lo sentimos, no se pudo completar, en breve lo solucionaremos";
 }
-?>
