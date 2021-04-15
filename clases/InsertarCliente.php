@@ -30,7 +30,7 @@ require_once 'Persona.php';
             $conexion = new Conexion();
             $conexion->EstablecerConexion()->query("INSERT INTO cliente(idCl, nombreCl, apellidoCl, ciudadCl, direccionCl, correoCl, telefonoCl, fechanacCl, user) 
             VALUES('$_id','$_nombre','$_apellido','$_ciudad','$_direccion','$_correo','$_telefono','$_fechanac','$_usuario')");
-            echo "Se registro correctamente";
+            echo "<CENTER>Se registro correctamente</CENTER>";
         }
     }
     
