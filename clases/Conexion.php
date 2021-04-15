@@ -32,8 +32,4 @@ class Conexion
         }
         return $conexion;
     }
-
-    public function TablaCliente(){
-        return $this->tbcliente;
-    }
 }
