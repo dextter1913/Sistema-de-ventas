@@ -5,7 +5,7 @@ include("../../conexiones/abrir.php");
 <?php
 $criterio = $_POST['criterio'];
 $criterio2 = $_GET['criterio2'];
-require_once("../../conexiones/ConsultaFacturas.php");
+require_once '../../conexiones/ConsultaFacturas.php';
 ?>
 <div class="row">
     <div class="col-1 col-md-1"></div>
