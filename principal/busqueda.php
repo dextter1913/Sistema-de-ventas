@@ -1,15 +1,15 @@
 <?php
+require_once '../clases/BuscarCliente.php';
 include("../estructura/superior.php");
 include("../conexiones/abrir.php");
-require_once '../clases/BuscarCliente.php';
 ?>
+
 <?php
-if (isset($_POST['btnbuscar'])) {
+if (isset($_POST['btnbuscarr'])) {
     $busqueda = new BuscarCliente($_POST['id']);
-    //$registros = mysqli_query($conexion, "SELECT * FROM $tbcliente WHERE idCl = '$_id'");
-    //while ($consulta = mysqli_fetch_array($registros)) {
-    while ($resultados = mysqli_fetch_array($busqueda->Consultar())) {  
-        
+    $busquedatemporal = $busqueda->ConsultaTabla();
+    while ($resultados = mysqli_fetch_array($busquedatemporal)) {
+        echo "Holaa";
 ?>
         <div class="container">
             <div class="row">
@@ -54,31 +54,31 @@ if (isset($_POST['btnbuscar'])) {
                                 </thead>
                                 <tr>
                                     <td>
-                                        <center><?= $resultados['idCl'] ?></center>
+                                        <center><?php echo $resultados['idCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['nombreCl'] ?></center>
+                                        <center><?php echo $resultados['nombreCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['apellidoCl'] ?></center>
+                                        <center><?php echo $resultados['apellidoCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['ciudadCl'] ?></center>
+                                        <center><?php echo $resultados['ciudadCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['direccionCl'] ?></center>
+                                        <center><?php echo $resultados['direccionCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['correoCl'] ?></center>
+                                        <center><?php echo $resultados['correoCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['telefonoCl'] ?></center>
+                                        <center><?php echo $resultados['telefonoCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['fechanacCl'] ?></center>
+                                        <center><?php echo $resultados['fechanacCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?= $resultados['user'] ?></center>
+                                        <center><?php echo $resultados['user']; ?></center>
                                     </td>
                                     <td>
                                         <center>
