@@ -20,11 +20,11 @@ require_once 'Conexion.php';
             return $resultado;// los 2 atributos que manda la conexion y que manda el String con la consulta sql 
         }
 
-        public function ConsultaIngresarFactura(){
-            $ConsultaFactura = "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;";
-            $resultadoFactura = mysqli_query($this->_conexion, $ConsultaFactura);
-            $Facturacion = mysqli_fetch_array($resultadoFactura);
-            return $Facturacion;
+        public function ConsultaIngresarFactura(){//Metodo para consultar Factura usando query
+            $ConsultaFactura = "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;";//Consulta para consultar Factura 
+            $resultadoFactura = mysqli_query($this->_conexion, $ConsultaFactura);//Ejecucion y guardado del query en la variable Facturacion
+            $FacturacionQuery = mysqli_fetch_array($resultadoFactura);
+            return $FacturacionQuery;
 
         }
 
