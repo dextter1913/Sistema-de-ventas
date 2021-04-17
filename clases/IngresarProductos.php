@@ -1,9 +1,9 @@
 <?php
 require_once 'Productos.php';
 require_once 'Conexion.php';
-class IngresarVenta extends Productos
+class IngresarProductos extends Productos
 {
-    function __construct($_nombreProducto, $_precio, $_precioVenta, $_categoria, $_usuario, $_descripcionP)
+    function __construct($_nombreProducto, $_precio, $_precioVenta, $_categoria, $_usuario, $_descripcionP)//recibiendo los datos de los productos enviados en losparametros del objetos por metodo post
     {
         $this->_nombreProducto = $_nombreProducto;
         $this->_precio = $_precio;
@@ -14,7 +14,7 @@ class IngresarVenta extends Productos
         
     }
 
-    public function InsertarVenta()
+    public function InsertarProducto()
     {
         $conexion = new Conexion();
         $conexion->EstablecerConexion()->query("INSERT INTO productos(nomProd, precioProd, precioVenta, categoria, descripcionProd, usuario) 

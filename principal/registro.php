@@ -23,9 +23,10 @@ if (isset($_POST['btnregistrar'])) {
     //VALUES('$_nombre','$_precio','$_precioVenta','$_categoria','$_descripcionP','$_usuario')");
     //include("../conexiones/cerrar.php");
     //echo "<center><b>se registro con exito</b></center>";
-    require_once '../clases/IngresarVenta.php';
-    $IngresarVenta = new IngresarVenta($_POST['nombre'],$_POST['precio'],$_POST['precioVenta'],$_POST['categoria'],$_POST['usuario'],$_POST['DescripcionP']);
-    $IngresarVenta->InsertarVenta();
+    require_once '../clases/IngresarProductos.php';
+    $IngresProductos = new IngresarProductos($_POST['nombre'],$_POST['precio'],$_POST['precioVenta'],$_POST['categoria'],$_POST['usuario'],$_POST['DescripcionP']);//enviando los datos por metodo post en el parametro del objeto 
+    $IngresProductos->InsertarProducto();
+    print "<center>Producto Ingresado Correctamente</center>";
 
 }
 ?>
