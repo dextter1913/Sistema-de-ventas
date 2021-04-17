@@ -4,7 +4,7 @@ require_once 'Conexion.php';
     {
         private $_id;//atributo que recibe el id 
         private $_consulta;// atributo que recibe la consulta
-        private $_conexion;// atributo que recibe la conexion 
+        private $_conexion;// atributo que recibe la conexion
 
         public function __construct($_id) {
             $this->_id = $_id; //llevando el id del cliente
@@ -15,10 +15,17 @@ require_once 'Conexion.php';
             
 
         }
-        public function ConsultaTabla(){
-            $resultado = mysqli_query($this->_conexion, $this->_consulta);
+        public function ConsultaTabla(){ // Metodo que consulta el query
+            $resultado = mysqli_query($this->_conexion, $this->_consulta); // ingresando datos del query usando
+            return $resultado;// los 2 atributos que manda la conexion y que manda el String con la consulta sql 
+        }
 
-            return $resultado;
+        public function ConsultaIngresarFactura(){
+            $ConsultaFactura = "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;";
+            $resultadoFactura = mysqli_query($this->_conexion, $ConsultaFactura);
+            $Facturacion = mysqli_fetch_array($resultadoFactura);
+            return $Facturacion;
+
         }
 
     }

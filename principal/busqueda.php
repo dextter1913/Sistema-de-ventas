@@ -84,11 +84,12 @@ if (isset($_POST['btnbuscarr'])) {
                                             <?php
                                             //Busca el ultimo ID de factura generado
                                             $_POST['btnIngresarFactura'];
-                                            $Facturacion = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
-                                            $rowFactura  = mysqli_fetch_array($Facturacion);
-                                            $Factura = $rowFactura['Nfactura'];
+                                            // = mysqli_query($conexion, "SELECT * FROM facturaVentas ORDER by Nfactura DESC LIMIT 1;");
+                                            //$rowFactura  = mysqli_fetch_array($Facturacion);
+                                            //$Factura = $rowFactura['Nfactura'];
+                                            $NumeroFactura = $busqueda->ConsultaIngresarFactura()['Nfactura'];
                                             ?>
-                                            <form action="submenu/ingresar-venta.php?id=<?php echo $consulta['idCl']; ?>&idfactura=<?php echo $Factura; ?>" method="post">
+                                            <form action="submenu/ingresar-venta.php?id=<?php echo $resultados['idCl']; ?>&idfactura=<?php echo $NumeroFactura; ?>" method="post">
                                                 <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
                                             </form>
                                         </center>
