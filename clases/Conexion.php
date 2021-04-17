@@ -9,7 +9,7 @@ class Conexion
     protected $tbempleado;
     protected $tbusuarios;
     protected $tbproductos;
-    public function __construct($host = "atlaz.cvcpedzqpzzg.us-east-2.rds.amazonaws.com", $user = "admin", $pass = "12345678", $db = "atlazdb", $tbcliente = "cliente", $tbempleado = "empleados", $tbusuarios = "usuarios", $tbproductos = "productos")
+    function __construct($host = "atlaz.cvcpedzqpzzg.us-east-2.rds.amazonaws.com", $user = "admin", $pass = "12345678", $db = "atlazdb", $tbcliente = "cliente", $tbempleado = "empleados", $tbusuarios = "usuarios", $tbproductos = "productos")
     {
         $this->host = $host;
         $this->user = $user;
@@ -31,5 +31,10 @@ class Conexion
             echo "lo sentimos, no se pudo completar, en breve lo solucionaremos";
         }
         return $conexion;
+    }
+
+    function __destruct()
+    {
+        mysqli_close($this->EstablecerConexion());
     }
 }
