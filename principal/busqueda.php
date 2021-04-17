@@ -9,7 +9,6 @@ if (isset($_POST['btnbuscarr'])) {
     $busqueda = new BuscarCliente($_POST['id']);
     $busquedatemporal = $busqueda->ConsultaTabla();
     while ($resultados = mysqli_fetch_array($busquedatemporal)) {
-        echo "Holaa";
 ?>
         <div class="container">
             <div class="row">
