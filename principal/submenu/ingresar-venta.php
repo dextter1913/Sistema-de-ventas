@@ -59,13 +59,13 @@ include("../../conexiones/abrir.php");
             $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
 
             //insertar ventas en la factura
-            $consulta = mysqli_query($conexion, "SELECT * FROM productos");
-            $valorP = mysqli_fetch_array($consulta);
             if (isset($_POST['btningresarVenta'])) {
                 $_fecVenta = $_POST['fechaventa'];
                 $_cantidadU = $_POST['CantidadUnidad'];
                 $_id = $_GET['id'];
                 $_idprod = $_POST['idprod'];
+                $consulta = mysqli_query($conexion, "SELECT * FROM productos WHERE idprod = '$_idprod'");
+                $valorP = mysqli_fetch_array($consulta);
                 $_Total = $valorP['precioVenta'] * $_cantidadU;
                 $_idfactura = $_GET['idfactura'];
                 $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod','$_idfactura')");
