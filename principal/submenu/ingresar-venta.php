@@ -49,7 +49,7 @@ include("../../conexiones/abrir.php");
                 </div>
                 <br>
                 <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
-                    <?php require_once("../../estructura/ModalIngresarVenta.php"); //formulario ingresar venta
+                    <?php require_once '../../estructura/ModalIngresarVenta.php'; //formulario ingresar venta
                     ?>
                     <input type="submit" value="Ingresar Venta" class="btn btn-outline-primary" name="btningresarVenta">
                 </form>
