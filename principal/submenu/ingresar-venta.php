@@ -55,8 +55,7 @@ include("../../conexiones/abrir.php");
                 </form>
             </div>
             <?php
-            //inserta una nueva factura por adelantado
-            $conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
+
 
             //insertar ventas en la factura
             if (isset($_POST['btningresarVenta'])) {
