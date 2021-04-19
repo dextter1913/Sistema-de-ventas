@@ -19,6 +19,7 @@ class IngresarProductos extends Productos
         $conexion = new Conexion();
         $conexion->EstablecerConexion()->query("INSERT INTO productos(nomProd, precioProd, precioVenta, categoria, descripcionProd, usuario) 
         VALUES('$this->_nombreProducto','$this->_precio','$this->_precioVenta','$this->_categoria','$this->_descripcionP','$this->_usuario')");
+        $conexion->__destruct();// destruyendo la conexino
     }
     
 }
