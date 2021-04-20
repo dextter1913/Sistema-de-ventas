@@ -81,6 +81,7 @@ if (isset($_GET['btnbuscarr'])) {
                                     </td>
                                     <td>
                                         <center>
+
                                             <?php
                                             //Busca el ultimo ID de factura generado
                                             $_POST['btnIngresarFactura']; //boton de ingresar venta del cliente buscado
