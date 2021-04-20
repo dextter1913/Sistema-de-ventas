@@ -5,8 +5,8 @@ include("../conexiones/abrir.php");
 ?>
 
 <?php
-if (isset($_POST['btnbuscarr'])) {
-    $busqueda = new BuscarCliente($_POST['id']);
+if (isset($_GET['btnbuscarr'])) {
+    $busqueda = new BuscarCliente($_GET['id']);
     $busquedatemporal = $busqueda->ConsultaTabla();
     while ($resultados = mysqli_fetch_array($busquedatemporal)) {
 ?>
@@ -81,7 +81,7 @@ if (isset($_POST['btnbuscarr'])) {
                                     </td>
                                     <td>
                                         <center>
-                                            <form action="busqueda.php" method="post">
+                                            <form action="busqueda.php?id=<?php echo $resultados['idCl']; ?>" method="post">
                                                 <button type="submit" class="btn btn-outline-secondary" name="btnGenerarFactura"><i class="fas fa-plus"></i></button>
                                             </form>
                                             <?php

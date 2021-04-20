@@ -37,7 +37,7 @@
                                 <a class="nav-link" href="buscar-factura.php">Buscar Factura</a>
                             </li>
                         </ul>
-                        <form action="../principal/busqueda.php" method="post" class="d-flex">
+                        <form action="../principal/busqueda.php" method="GET" class="d-flex">
                             <input class="form-control me-2" name="id" type="search" placeholder="Ingrese ID" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit" name="btnbuscarr"><i class="fas fa-search"></i> </button>
                         </form>
