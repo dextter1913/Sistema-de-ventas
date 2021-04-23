@@ -14,6 +14,26 @@
 
 
 <body>
+
+    <?php
+    if (isset($_POST['btniniciarsesion'])) {
+        $_user = $_POST['usuario'];
+        $_pass = $_POST['contraseña'];
+        session_start();
+        ob_start();
+        $_SESSION['usuario'] = $_user;
+        include("../conexiones/abrir.php");
+        $consulta = "SELECT * FROM usuarios WHERE user = '$_user' AND pass = '$_pass'";
+        $resultado = mysqli_query($conexion, $consulta);
+        $filas = mysqli_num_rows($resultado);
+        if ($filas) {
+            header("Location:./app.php");
+        } else {
+            echo "Datos incorrectos";
+            header("Location:../index.php");
+        }
+    }
+    ?>
     <div class="container-fluid">
         <div class="shadow-lg p-3 mb-5 bg-body rounded">
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
