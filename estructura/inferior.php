@@ -1,7 +1,7 @@
 <br><br>
 <div class="shadow p-3 mb-5 bg-body rounded">
     <div class="p-3 mb-2 bg-dark text-white">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 
                 <div class="col-6 col-md-3">
@@ -23,22 +23,22 @@
                             <center>Redes Sociales</center>
                         </b><br><br>
                         <div class="col-6 col-sm-4 col-md-2">
-                            <h2><samp class="fab fa-twitter-square"></samp></h2>
+                            <h2><samp class="fab fa-twitter-square"><a href="#"></a></samp></h2>
                         </div>
                         <div class="col-6 col-sm-4 col-md-2">
-                            <h2><samp class="fab fa-facebook-square"></samp></h2>
+                            <h2><samp class="fab fa-facebook-square"><a href="#"></a></samp></h2>
                         </div>
                         <div class="col-6 col-sm-4 col-md-2">
-                            <h2><samp class="fab fa-telegram"></samp></h2>
+                            <h2><samp class="fab fa-telegram"><a href="#"></a></samp></h2>
                         </div>
                         <div class="col-6 col-sm-4 col-md-2">
-                            <h2><samp class="fab fa-github"></samp></h2>
+                            <h2><samp class="fab fa-github"><a href="#"></a></samp></h2>
                         </div>
                         <div class="col-6 col-sm-4 col-md-2">
-                            <h2><samp class="fab fa-whatsapp"></samp></h2>
+                            <h2><samp class="fab fa-whatsapp"><a href="#"></a></samp></h2>
                         </div>
                         <div class="col-6 col-sm-4 col-md-2">
-                            <h2><samp class="fab fa-discord"></samp></h2>
+                            <h2><samp class="fab fa-discord"><a href="#"></a></samp></h2>
                         </div>
                     </div>
                 </div>
