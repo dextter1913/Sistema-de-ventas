@@ -100,7 +100,7 @@ include("../conexiones/abrir.php");
                                             <center><?php echo $consulta['precioVenta']; ?></center>
                                         </td>
                                         <td>
-                                            <center><?php echo $consulta['categoria']; ?></center>
+                                            <center><?php echo $consulta['nomCategoria']; ?></center>
                                         </td>
                                         <td>
                                             <center><?php echo $consulta['nombreCl']; ?></center>
