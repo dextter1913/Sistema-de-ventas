@@ -19,36 +19,36 @@
           <div class="carousel-item active">
             <img src="../estructura/imagen/1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Sistema de ventas</h5>
-              <p>profesional, versatil, responsive y ajustable.</p>
+              <h5 style="color: white;"><b>Sistema de ventas</b> </h5>
+              <p style="color: white;">profesional, versatil, responsive y ajustable.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="../estructura/imagen/2.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-dark">Crear Seguimiento</h5>
-              <p class="text-dark">crea un seguimiento mucho mas profesional en tu negocio.</p>
+              <h5 style="color:#000000;"><b>Crear Seguimiento</b></h5>
+              <p style="color:#000000;"><b>crea un seguimiento mucho mas profesional en tu negocio.</b></p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="../estructura/imagen/3.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-body">Facíl y agíl</h5>
-              <p class="text-body">con una gran agilidad, versatilidad y facilismo.</p>
+              <h5 style="color: black;"><b>Facíl y agíl</b></h5>
+              <p style="color: black;"><b>con una gran agilidad, versatilidad y facilismo.</b></p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="../estructura/imagen/4.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-body">se todo un profesional</h5>
-              <p class="text-body">une el profesionalismo mas el emprendimiento para conseguir el exito</p>
+              <h5 style="color: white;"><b>se todo un profesional</b> </h5>
+              <p style="color: white;"><b>une el profesionalismo mas el emprendimiento para conseguir el exito</b> </p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="../estructura/imagen/5.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-body">soluciones inmediataas</h5>
-              <p class="text-body">Bajo la mejor calidadde codigo </p>
+              <h5 style="color: white;">soluciones inmediataas</h5>
+              <p style="color: white;">Bajo la mejor calidadde codigo </p>
             </div>
           </div>
         </div>
