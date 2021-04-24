@@ -15,12 +15,12 @@ require_once '../../conexiones/ConsultaFacturas.php';
                 <table class="table table-hover">
                     <thead class="table-light">
                         <tr>
-                            <th>Producto</th>
-                            <th>Tipo</th>
-                            <th>Cantidad Unidad</th>
-                            <th>Total</th>
-                            <th>Fecha Factura</th>
-                            <th>Numero de Factura</th>
+                            <th><center>Producto</center> </th>
+                            <th><center>Tipo</center></th>
+                            <th><center>Cantidad Unidad</center></th>
+                            <th><center>Total</center></th>
+                            <th><center>Fecha Factura</center></th>
+                            <th><center>Numero de Factura</center></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,12 +28,12 @@ require_once '../../conexiones/ConsultaFacturas.php';
                         while ($rows = mysqli_fetch_array($registros)) {
                         ?>
                             <tr>
-                                <td><?php echo $rows['nomProd']; ?></td>
-                                <td><?php echo $rows['categoria']; ?></td>
-                                <td><?php echo $rows['cantidad']; ?></td>
-                                <td><?php echo $rows['totalV']; ?></td>
-                                <td><?php echo $rows['fechaFactura']; ?></td>
-                                <td><?php echo $rows['Nfactura'];?></td>
+                                <td><center><?php echo $rows['nomProd']; ?></center></td>
+                                <td><center><?php echo $rows['nomCategoria']; ?></center></td>
+                                <td><center><?php echo $rows['cantidad']; ?></center></td>
+                                <td><center><?php echo $rows['totalV']; ?></center></td>
+                                <td><center><?php echo $rows['fechaFactura']; ?></center></td>
+                                <td><center><?php echo $rows['Nfactura'];?></center></td>
                             </tr>
                         <?php
                             $total = $total + $rows['totalV'];
