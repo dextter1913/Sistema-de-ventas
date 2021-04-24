@@ -1,9 +1,9 @@
 <?php
-include("../../conexiones/abrir.php");
+include '../../conexiones/abrir.php';
 ?>
 
 <?php
-require('../fpdf/fpdf.php');
+require '../fpdf/fpdf.php';
 
 class PDF extends FPDF
 {
@@ -15,7 +15,7 @@ class PDF extends FPDF
         // Salto de línea
         $this->Ln(20);
         // Arial bold 15
-        $this->SetFont('Arial', 'B', 15);
+        $this->SetFont('Arial', 'B', 12);//Modificar tipo de letra y tamaño del encabezado
         // Movernos a la derecha
         $this->Cell(80);
         // Título
@@ -47,13 +47,13 @@ $resultado = $registros;
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Arial', '', 16);
+$pdf->SetFont('Arial', '', 8);//Modificar tipo de letra y tamaño del cuerpo
 
 while ($row = mysqli_fetch_array($resultado)) {
     $pdf->Cell(47, 10, utf8_decode($row['nomProd']), 1, 0, 'C', 0);
     $pdf->Cell(47, 10, utf8_decode($row['cantidad']), 1, 0, 'C', 0);
     $pdf->Cell(47, 10, utf8_decode($row['precioVenta']), 1, 0, 'C', 0);
-    $pdf->Cell(47, 10, utf8_decode($row['categoria']), 1, 1, 'C', 0);
+    $pdf->Cell(47, 10, utf8_decode($row['nomCategoria']), 1, 1, 'C', 0);
 }
 require("../../conexiones/SelectModVentas.php");
 $registros3 = $registros;
