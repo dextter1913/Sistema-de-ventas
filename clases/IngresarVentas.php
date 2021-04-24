@@ -5,8 +5,6 @@ class IngresarVentas extends Productos
 {
     private $fechaventa;
     private $cantidad;
-
-
     private $totalV;
     private $idProd;
     private $Factura;
