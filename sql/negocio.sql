@@ -62,13 +62,13 @@ CREATE TABLE productos(
     nomProd VARCHAR (50) NOT NULL,
     precioProd float (25) NOT NULL,
     precioVenta float (25) NOT NULL,
-    categoria VARCHAR (50) NOT NULL,
+    nomCategoria VARCHAR (50) NOT NULL,
     descripcionProd TEXT NOT NULL,
-    usuario VARCHAR (50) NOT NULL,
-    index (categoria),
-    FOREIGN KEY (categoria) REFERENCES categorias(nomCategoria),
-    INDEX (usuario),
-    FOREIGN KEY (usuario) REFERENCES usuarios (user)
+    user VARCHAR (50) NOT NULL,
+    index (nomCategoria),
+    FOREIGN KEY (nomCategoria) REFERENCES categorias(nomCategoria),
+    INDEX (user),
+    FOREIGN KEY (user) REFERENCES usuarios (user)
   );
 INSERT INTO
   categorias(nomCategoria)
@@ -122,9 +122,9 @@ INSERT INTO
     nomProd,
     precioProd,
     precioVenta,
-    categoria,
+    nomCategoria,
     descripcionProd,
-    usuario
+    user
   )
 VALUES(
     "NoteBook vivoB Asus",
