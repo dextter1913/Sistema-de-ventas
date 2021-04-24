@@ -15,12 +15,27 @@ require_once '../../conexiones/ConsultaFacturas.php';
                 <table class="table table-hover">
                     <thead class="table-light">
                         <tr>
-                            <th><center>Producto</center> </th>
-                            <th><center>Tipo</center></th>
-                            <th><center>Cantidad Unidad</center></th>
-                            <th><center>Total</center></th>
-                            <th><center>Fecha Factura</center></th>
-                            <th><center>Numero de Factura</center></th>
+                            <th>
+                                <center>Producto</center>
+                            </th>
+                            <th>
+                                <center>Tipo</center>
+                            </th>
+                            <th>
+                                <center>Cantidad Unidad</center>
+                            </th>
+                            <th>
+                                <center>Total</center>
+                            </th>
+                            <th>
+                                <center>Fecha Factura</center>
+                            </th>
+                            <th>
+                                <center>Numero de Factura</center>
+                            </th>
+                            <th>
+                                <center>Estado de Factura</center>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,12 +43,32 @@ require_once '../../conexiones/ConsultaFacturas.php';
                         while ($rows = mysqli_fetch_array($registros)) {
                         ?>
                             <tr>
-                                <td><center><?php echo $rows['nomProd']; ?></center></td>
-                                <td><center><?php echo $rows['nomCategoria']; ?></center></td>
-                                <td><center><?php echo $rows['cantidad']; ?></center></td>
-                                <td><center><?php echo $rows['totalV']; ?></center></td>
-                                <td><center><?php echo $rows['fechaFactura']; ?></center></td>
-                                <td><center><?php echo $rows['Nfactura'];?></center></td>
+                                <td>
+                                    <center><?php echo $rows['nomProd']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $rows['nomCategoria']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $rows['cantidad']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $rows['totalV']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $rows['fechaFactura']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?php echo $rows['Nfactura']; ?></center>
+                                </td>
+                                <td>
+                                    <center> <select id="categoria" class="form-select" name="EstadoFactura">
+                                            <option selected>Seleccionar</option>
+                                            <option>Pagada</option>
+                                            <option>Devuelta</option>
+                                            <option>Anulada</option>
+                                        </select></center>
+                                </td>
                             </tr>
                         <?php
                             $total = $total + $rows['totalV'];
