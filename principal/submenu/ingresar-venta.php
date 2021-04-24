@@ -70,6 +70,10 @@ include("../../conexiones/abrir.php");
                 $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod','$_idfactura')");
                 echo "Venta ingresada, Total: " . $_Total . "<br>";
                 echo "el Numero de Factura es: <b>" . $_idfactura . "</b>";
+               // require_once '../../clases/IngresarVentas.php';
+               //$ingresarVentas = new IngresarVentas($_POST['fechaventa'], $_POST['CantidadUnidad'], $_GET['id'], $_POST['idprod'], $_GET['idfactura']);
+
+               //$ingresarVentas->InsertarVentas();
             ?>
                 <form action="Facturas.php?criterio2=<?php echo $_idfactura; ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger"><i class="fas fa-wallet"></i></button>
