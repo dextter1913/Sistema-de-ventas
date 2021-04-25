@@ -36,6 +36,9 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                         <center>Numero de Factura</center>
                                     </th>
                                     <th>
+                                        <center>Estado Actual</center>
+                                    </th>
+                                    <th>
                                         <center>Estado de Factura</center>
                                     </th>
                                 </tr>
@@ -62,6 +65,9 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                         </td>
                                         <td>
                                             <center><?php echo $rows['Nfactura']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><?php echo $rows['Estadoventa']; ?></center>
                                         </td>
                                         <td>
                                             <center>
