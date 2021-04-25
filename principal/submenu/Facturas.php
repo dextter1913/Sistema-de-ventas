@@ -12,7 +12,8 @@ require_once '../../conexiones/ConsultaFacturas.php';
         <div class="row">
             <div class="col-1 col-md-1"></div>
             <div class="col-10 col-md-10">
-                <div class="shadow-lg p-3 mb-5 bg-body rounded">
+            <center><h1><i>Factura</i></h1></center>
+                <div class="shadow-lg p-1 mb-1 bg-body rounded">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead class="table-light">
