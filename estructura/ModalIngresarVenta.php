@@ -17,6 +17,12 @@
                             <input type="date" name="fechaventa" id="fechaVenta" class="form-control"><br>
                             <label for="CantidadUnidad">Cantidad unidad</label>
                             <input type="number" name="CantidadUnidad" id="CantidadUnidad" class="form-control"><br>
+                            <select id="categoria" class="form-select" name="EstadoVenta">
+                                <option selected>Pendiente</option>
+                                <option>Pagado</option>
+                                <option>Devuelto</option>
+                                <option>Anulado</option>
+                            </select>
                         </div>
                         <div class="col-12 col-sm4 col-md-2"></div>
                     </div>

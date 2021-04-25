@@ -65,20 +65,18 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                         </td>
                                         <td>
                                             <center>
-                                                <select id="categoria" class="form-select" name="EstadoFactura">
+                                                <select id="categoria" class="form-select" name="EstadoVenta">
                                                     <option selected>Pendiente</option>
                                                     <option>Pagado</option>
                                                     <option>Devuelto</option>
                                                     <option>Anulado</option>
                                                 </select>
                                             </center>
-
                                         </td>
                                     </tr>
                                 <?php
                                     $total = $total + $rows['totalV'];
                                 }
-                                include("../../conexiones/cerrar.php");
                                 ?>
                             </tbody>
                             <tfoot>
@@ -104,6 +102,8 @@ require_once '../../conexiones/ConsultaFacturas.php';
     </div>
 </form>
 <?php
+
+
 include("../../conexiones/cerrar.php");
 include("../../estructura/inferior.php");
 ?>

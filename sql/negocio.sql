@@ -107,6 +107,7 @@ CREATE TABLE venta(
     fechaventa DATE NOT NULL,
     cantidad INTEGER (10) NOT NULL,
     totalV FLOAT (25) NOT NULL,
+    Estadoventa VARCHAR (25) NULL,
     cliente VARCHAR (20) NOT NULL,
     producto INTEGER (20) NOT NULL,
     Factura INTEGER (25) NULL,
