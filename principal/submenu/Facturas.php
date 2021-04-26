@@ -3,21 +3,26 @@ include("../../estructura/menu2.php");
 include("../../conexiones/abrir.php");
 ?>
 <?php
-$criterio = $_POST['criterio'];
+$criterio = $_GET['criterio'];
 $criterio2 = $_GET['criterio2'];
 require_once '../../conexiones/ConsultaFacturas.php';
 ?>
-<form action="Facturas.php" method="post">
+<form action="Facturas.php" method="get">
     <div class="container-fluid">
         <div class="row">
             <div class="col-1 col-md-1"></div>
             <div class="col-10 col-md-10">
-            <center><h1><i>Factura</i></h1></center>
+                <center>
+                    <h1><i>Factura</i></h1>
+                </center>
                 <div class="shadow-lg p-1 mb-1 bg-body rounded">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead class="table-light">
                                 <tr>
+                                    <th>
+                                        <center>ID Venta</center>
+                                    </th>
                                     <th>
                                         <center>Producto</center>
                                     </th>
@@ -39,9 +44,6 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                     <th>
                                         <center>Estado Actual</center>
                                     </th>
-                                    <th>
-                                        <center>Estado de Factura</center>
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +51,9 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                 while ($rows = mysqli_fetch_array($registros)) {
                                 ?>
                                     <tr>
+                                        <td>
+                                            <center><?php echo $rows['idventa']; ?></center>
+                                        </td>
                                         <td>
                                             <center><?php echo $rows['nomProd']; ?></center>
                                         </td>
@@ -70,16 +75,6 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                         <td>
                                             <center><?php echo $rows['Estadoventa']; ?></center>
                                         </td>
-                                        <td>
-                                            <center>
-                                                <select id="categoria" class="form-select" name="EstadoVenta">
-                                                    <option selected>Pendiente</option>
-                                                    <option>Pagado</option>
-                                                    <option>Devuelto</option>
-                                                    <option>Anulado</option>
-                                                </select>
-                                            </center>
-                                        </td>
                                     </tr>
                                 <?php
                                     $total = $total + $rows['totalV'];
@@ -94,13 +89,31 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                     <td><?php echo $total; ?></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="submit" class="btn btn-outline-primary btn-lg"><i class="far fa-save"></i></button></td>
+                                    <td>
+                                        <label for="IdVneta">Ingrese ID</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="IdVenta" class="form-control" id="IdVenta">
+                                    </td>
+                                    <td>
+                                        <select id="categoria" class="form-select" name="EstadoVenta">
+                                            <option selected>Pendiente</option>
+                                            <option>Pagado</option>
+                                            <option>Devuelto</option>
+                                            <option>Anulado</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="submit" class="btn btn-outline-primary btn-lg" name="btnModificarEstadoVenta"><i class="far fa-save"></i></button></td>
                                 </tr>
                             </tfoot>
                         </table>
+                        <?php
+                        if (isset($_GET['btnModificarEstadoVenta'])) {
+                            require_once '../../clases/CambiarEstadoVenta.php';
+                            $CambiarEstadoVenta = new CambiarEstadoVenta($_GET['EstadoVenta'], $_GET['IdVenta']);
+                            $CambiarEstadoVenta->CambiarEstadoVenta();
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col-1 col-md-1"></div>
