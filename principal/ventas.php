@@ -2,7 +2,7 @@
 include("../estructura/superior.php");
 include("../conexiones/abrir.php");
 ?>
-<div class="container">
+<div class="container-fluid">
     <center>
         <h1><i>Buscar Ventas Totales</i></h1>
     </center>
@@ -67,6 +67,9 @@ include("../conexiones/abrir.php");
                                     <th>
                                         <center>Acciones</center>
                                     </th>
+                                                                        <th>
+                                        <center>Estado Venta</center>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -110,6 +113,9 @@ include("../conexiones/abrir.php");
                                         </td>
                                         <td>
                                             <center><a href="submenu/ver-venta.php?id=<?php echo $consulta['idventa']; ?>"><button class="btn btn-outline-info"><i class="fas fa-eye"></i></button></a> </center>
+                                        </td>
+                                        <td>
+                                            <center><?php echo $consulta['Estadoventa']; ?></center>
                                         </td>
                                     </tr>
                                 <?php } ?>
