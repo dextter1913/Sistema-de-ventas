@@ -7,7 +7,7 @@ CREATE TABLE usuarios(
 );
 INSERT INTO
   usuarios(user, pass)
-VALUES("dextter1913", "123");
+VALUES("dextter1913", "123"),("admin","123");
 CREATE TABLE empleados(
     idEmp VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreEmp VARCHAR (50) NOT NULL,
