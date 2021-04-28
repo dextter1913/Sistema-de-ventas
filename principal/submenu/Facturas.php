@@ -7,7 +7,7 @@ $criterio = $_GET['criterio'];
 $criterio2 = $_GET['criterio2'];
 require_once '../../conexiones/ConsultaFacturas.php';
 ?>
-<form action="ProcesoFacturando.php?criterio=<?php echo $criterio; ?>" method="post">
+<form action="../../PuertaTrasera/ProcesoFacturando.php?criterio=<?php echo $criterio; ?>" method="post">
     <div class="container-fluid">
         <div class="row">
             <div class="col-1 col-md-1"></div>
