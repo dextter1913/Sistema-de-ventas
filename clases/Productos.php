@@ -1,5 +1,5 @@
 <?php 
-    class Productos extends Persona
+    class Productos
     {
         protected $_nombreProducto;
         protected $_precio;

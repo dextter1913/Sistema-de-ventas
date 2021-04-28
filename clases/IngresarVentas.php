@@ -1,5 +1,6 @@
+
 <?php
-require_once 'Productos.php';
+/*require_once 'Productos.php';
 require_once 'Conexion.php';
 class IngresarVentas extends Productos
 {
@@ -42,5 +43,6 @@ class IngresarVentas extends Productos
 
     }
 }
-    //INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) 
-    //VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod','$_idfactura'
+    INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) 
+    VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod','$_idfactura'
+*/

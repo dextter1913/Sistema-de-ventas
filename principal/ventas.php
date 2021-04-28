@@ -9,17 +9,27 @@ include("../conexiones/abrir.php");
     <div class="shadow-sm p-3 mb-5 bg-body rounded}">
         <form action="ventas.php" method="post">
             <div class="row">
-                <div class="col-12 col-md-3"></div>
                 <div class="col-12 col-md-3">
                     <label for="fechaini">Ingrese fecha Inicial</label>
                     <input type="date" name="fechaini" id="fechaini" class="form-control">
                 </div>
-
                 <div class="col-12 col-md-3">
                     <label for="fechafin">Ingrese fecha Final</label>
                     <input type="date" name="fechafin" id="fechafin" class="form-control">
                 </div>
-                <div class="col-12 col-md-3"></div>
+                <div class="col-12 col-md-3">
+                    <label for="categoria">Estado Venta</label>
+                    <select id="categoria" class="form-select" name="EstadoVenta">
+                        <option>Pendiente</option>
+                        <option>Pagado</option>
+                        <option>Devuelto</option>
+                        <option>Anulado</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-3">
+                <label for="idCliente">Id Cliente</label>
+                <input type="tel" name="idCliente" id="idCliente" class="form-control">
+                </div>
             </div><br>
             <div class="row">
                 <div class="col-12 col-md-6"></div>
@@ -67,7 +77,7 @@ include("../conexiones/abrir.php");
                                     <th>
                                         <center>Acciones</center>
                                     </th>
-                                                                        <th>
+                                    <th>
                                         <center>Estado Venta</center>
                                     </th>
                                 </tr>
@@ -77,6 +87,8 @@ include("../conexiones/abrir.php");
                                 <?php
                                 $_fechaini = $_POST['fechaini'];
                                 $_fechafinal = $_POST['fechafin'];
+                                $_estadoVenta = $_POST['EstadoVenta'];
+                                $_idCliente = $_POST['idCliente'];
                                 require("../conexiones/SelectModVentas.php");
                                 $registros0 = $registros;
 
