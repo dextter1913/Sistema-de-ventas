@@ -1,13 +1,7 @@
 <?php
-include("../../estructura/menu2.php");
-include("../../conexiones/abrir.php");
+require_once '../../clases/ConsultaFacturas.php';
 ?>
-<?php
-$criterio = $_GET['criterio'];
-$criterio2 = $_GET['criterio2'];
-require_once '../../conexiones/ConsultaFacturas.php';
-?>
-<form action="ProcesoFacturando.php?criterio=<?php echo $criterio; ?>" method="post">
+<form action="Facturas.php" method="get">
     <div class="container-fluid">
         <div class="row">
             <div class="col-1 col-md-1"></div>
@@ -107,16 +101,3 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                 </tr>
                             </tfoot>
                         </table>
-                    </div>
-                </div>
-                <div class="col-1 col-md-1"></div>
-            </div>
-        </div>
-    </div>
-</form>
-<?php
-
-
-include("../../conexiones/cerrar.php");
-include("../../estructura/inferior.php");
-?>
