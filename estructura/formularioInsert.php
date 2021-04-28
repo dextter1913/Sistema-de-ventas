@@ -1,5 +1,4 @@
-<div class="container">
-
+<div class="container-fluid">
     <div class="row">
         <div class="col-1 col-md-1"></div>
         <div class="col-10 col-md-10">
@@ -40,12 +39,10 @@
                                             <label for="inputState">Ciudad</label>
                                             <select id="inputState" class="form-select" name="ciudad">
                                                 <option selected>Seleccionar</option>
-                                                <option>Aa</option>
                                                 <option>Aguachica Cesar</option>
                                                 <option>Apartadó Antioquia</option>
                                                 <option>Arauca</option>
                                                 <option>Armenia Quindío</option>
-                                                <option>Bb</option>
                                                 <option>Barrancabermeja Santander</option>
                                                 <option>Barranquilla Atlántico</option>
                                                 <option>Bello Antioquia</option>
@@ -53,7 +50,6 @@
                                                 <option>Bucaramanga Santander</option>
                                                 <option>Buenaventura Valle del Cauca</option>
                                                 <option>Buga Valle del Cauca</option>
-                                                <option>Cc</option>
                                                 <option>Cali Valle del Cauca</option>
                                                 <option>Cartago Valle del Cauca</option>
                                                 <option>Cartagena Bolívar</option>
@@ -62,29 +58,21 @@
                                                 <option>Chia Cundinamarca</option>
                                                 <option>Ciénaga Magdalena</option>
                                                 <option>Cúcuta Norte de Santander</option>
-                                                <option>Dd</option>
                                                 <option>Dosquebradas Risaralda</option>
                                                 <option>Duitama Boyacá</option>
-                                                <option>Ee</option>
                                                 <option>Envigado Antioquia</option>
-                                                <option>Ff</option>
                                                 <option>Facatativá Cundinamarca</option>
                                                 <option>Florencia Caqueta</option>
                                                 <option>Floridablanca Santander</option>
                                                 <option>Fusagasugá Cundinamarca</option>
-                                                <option>Gg</option>
                                                 <option>Girardot Cundinamarca</option>
                                                 <option>Girón Santander</option>
-                                                <option>Ii</option>
                                                 <option>Ibagué Tolima</option>
                                                 <option>Ipiales Nariño</option>
                                                 <option>Itagüí Antioquia</option>
-                                                <option>Jj</option>
                                                 <option>Jamundí Valle del Cauca</option>
-                                                <option>Ll</option>
                                                 <option>Lorica Córdoba</option>
                                                 <option>Los Patios Norte de Santander</option>
-                                                <option>Mm</option>
                                                 <option>Magangué Bolivar</option>
                                                 <option>Maicao Guajira</option>
                                                 <option>Malambo Atlántico</option>
@@ -92,11 +80,8 @@
                                                 <option>Medellín Antioquia</option>
                                                 <option>Melgar Tolima</option>
                                                 <option>Montería Córdoba</option>
-                                                <option>Nn</option>
                                                 <option>Neiva Huila</option>
-                                                <option>Oo</option>
                                                 <option>Ocaña Norte de Santander</option>
-                                                <option>Pp</option>
                                                 <option>Paipa, Boyacá</option>
                                                 <option>Palmira Valle del Cauca</option>
                                                 <option>Pamplona Norte de Santander</option>
@@ -105,12 +90,9 @@
                                                 <option>Piedecuesta Santander</option>
                                                 <option>Pitalito Huila</option>
                                                 <option>Popayán Cauca</option>
-                                                <option>Qq</option>
                                                 <option>Quibdó Choco</option>
-                                                <option>Rr</option>
                                                 <option>Riohacha Guajira</option>
                                                 <option>Rionegro Antioquia</option>
-                                                <option>Ss</option>
                                                 <option>Sabanalarga Atlántico</option>
                                                 <option>Sahagún Córdoba</option>
                                                 <option>San Andrés Isla</option>
@@ -119,21 +101,17 @@
                                                 <option>Soacha Cundinamarca</option>
                                                 <option>Sogamoso Boyacá</option>
                                                 <option>Soledad Atlántico</option>
-                                                <option>Tt</option>
                                                 <option>Tibú Norte de Santander</option>
                                                 <option>Tuluá Valle del Cauca</option>
                                                 <option>Tumaco Nariño</option>
                                                 <option>Tunja Boyacá</option>
                                                 <option>Turbo Antioquia</option>
-                                                <option>Vv</option>
                                                 <option>Valledupar Cesar</option>
                                                 <option>Villa de leyva</option>
                                                 <option>Villa del Rosario Norte de Santander</option>
                                                 <option>Villavicencio Meta</option>
-                                                <option>Yy</option>
                                                 <option>Yopal Casanare</option>
                                                 <option>Yumbo Valle del Cauca</option>
-                                                <option>Zz</option>
                                                 <option>Zipaquirá Cundinamarca</option>
                                             </select>
                                         </div>
@@ -225,13 +203,13 @@
                                         <div class="col-12 col-md-6 col-lg-6">
 
                                             <label for="DescripcionP">Descripcion</label>
-                                            <textarea name="DescripcionP" id="DescripcionP" cols="30" rows="3" class="form-control"></textarea>
+                                            <textarea name="DescripcionP" id="DescripcionP" cols="30" rows="3" class="form-control" placeholder="Ingrese Caracteristicas del producto"></textarea>
                                         </div>
-                                        <div class="col-12 col-md-2 col-lg-2">
-                                            <br><input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btnregistrar">
+                                        <div class="col-12 col-md-2 col-lg-3">
+                                            <label for="Stock">Stock y/o Cantidad</label>
+                                            <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Cantidad">
                                         </div>
-                                        <div class="col-12 col-md-3 col-lg-3"></div>
-
+                                        <div class="col-12 col-md-3 col-lg-3"><br/><input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btnregistrar"></div>
                                     </div>
                             </div>
                             </form>

@@ -13,7 +13,7 @@ if (isset($_POST['btningresar'])) {
 <?php
 if (isset($_POST['btnregistrar'])) {
     require_once '../clases/IngresarProductos.php';
-    $IngresProductos = new IngresarProductos($_POST['nombre'],$_POST['precio'],$_POST['precioVenta'],$_POST['categoria'],$_POST['usuario'],$_POST['DescripcionP']);//enviando los datos por metodo post en el parametro del objeto 
+    $IngresProductos = new IngresarProductos($_POST['nombre'],$_POST['precio'],$_POST['precioVenta'],$_POST['categoria'],$_POST['DescripcionP'],$_POST['Stock'],$_POST['usuario']);//enviando los datos por metodo post en el parametro del objeto 
     $IngresProductos->InsertarProducto();
     print "<center>Producto Ingresado Correctamente</center>";
 

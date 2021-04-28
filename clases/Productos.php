@@ -7,6 +7,7 @@
         protected $_categoria;
         protected $_usuario; 
         protected $_descripcionP;
+        protected $_Stock;
     }
     
 

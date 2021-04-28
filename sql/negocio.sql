@@ -15,7 +15,7 @@ CREATE TABLE empleados(
     telefonoEmp VARCHAR (20) NOT NULL,
     direccionEmp VARCHAR (50) NOT NULL,
     correoEmp VARCHAR (50) NOT NULL,
-    fechanacEmp VARCHAR (255) NOT NULL,
+    fechanacEmp DATE NOT NULL,
     user VARCHAR (50) NOT NULL,
     index(user),
     FOREIGN KEY (user) REFERENCES usuarios(user)
@@ -35,10 +35,10 @@ VALUES(
     "1035391050",
     "Cristian Orlando",
     "Aguirre Cataño",
-    3166857000,
+    "3166857000",
     "cra 33 47 35 int 172",
     "clau32usa@gmail.com",
-    1994 / 07 / 16,
+    1994-07-16,
     "dextter1913"
   );
 CREATE TABLE cliente(
@@ -64,6 +64,7 @@ CREATE TABLE productos(
     precioVenta float (25) NOT NULL,
     nomCategoria VARCHAR (50) NOT NULL,
     descripcionProd TEXT NOT NULL,
+    Stock INTEGER (3) NOT NULL,
     user VARCHAR (50) NOT NULL,
     index (nomCategoria),
     FOREIGN KEY (nomCategoria) REFERENCES categorias(nomCategoria),
@@ -125,6 +126,7 @@ INSERT INTO
     precioVenta,
     nomCategoria,
     descripcionProd,
+    Stock,
     user
   )
 VALUES(
@@ -133,6 +135,7 @@ VALUES(
     2700000,
     "Tecnología",
     "Pantalla 14 LCD SSD512GB, 12GBDDR4, Ryzen73700U",
+    20,
     "dextter1913"
   ),(
     "Macbook pro",
@@ -140,6 +143,7 @@ VALUES(
     3200000,
     "Tecnología",
     "Pantalla 15 LCD SSD1TB, 8GBDDR4, Core i7 Gen9",
+    25,
     "dextter1913"
   );
 INSERT INTO
@@ -156,14 +160,14 @@ INSERT INTO
   )
 VALUES(
     '1000764838',
-    'Norena ',
-    'Godoy ',
+    'Norena',
+    'Godoy',
     'Medellín Antioquia',
     'Cra 33 47 35',
     'Norenagodoy90@gmail.com',
     '3135779037',
     '1998-08-04',
-    'Dextter1913'
+    'dextter1913'
   ),(
     '1035391050',
     'Cristian',
@@ -171,7 +175,7 @@ VALUES(
     'Medellín Antioquia',
     'carrera 33 47 35',
     'clau32usa@gmail.com',
-    '+573166857000',
+    '3166857000',
     '1994-07-16',
     'dextter1913'
   ),(
@@ -179,9 +183,9 @@ VALUES(
     'Claudia',
     'Cataño',
     'Medellín Antioquia',
-    'Car33#4735',
+    'Cra 33 # 47 35',
     'claudiacatano001@gmail.com',
     '3147555068',
     '2021-03-01',
-    'Dextter1913'
+    'dextter1913'
   );
