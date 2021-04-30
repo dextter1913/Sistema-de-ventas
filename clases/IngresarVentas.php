@@ -35,5 +35,6 @@ class IngresarVentas
         VALUES('$_fecVenta','$_cantidadU','$_Total','$_EstadoVenta','$_id','$_idprod','$_idfactura')");
         echo "Venta ingresada, Total: " . $_Total . "<br>";
         echo "el Numero de Factura es: <b>" . $_idfactura . "</b>";
+        $conexion->__destruct();
     }
 }
