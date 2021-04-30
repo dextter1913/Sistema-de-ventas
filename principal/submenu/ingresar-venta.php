@@ -1,6 +1,5 @@
 <?php
 include("../../estructura/menu2.php");
-include("../../conexiones/abrir.php");
 
 ?>
 <div class="container-fluid">
@@ -78,6 +77,5 @@ include("../../conexiones/abrir.php");
     </div>
 </div>
 <?php
-include("../../conexiones/cerrar.php");
 include("../../estructura/inferior.php");
 ?>
