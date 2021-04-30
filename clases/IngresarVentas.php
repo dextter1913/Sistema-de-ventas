@@ -1,48 +1,39 @@
-
 <?php
-/*require_once 'Productos.php';
-require_once 'Conexion.php';
-class IngresarVentas extends Productos
+class IngresarVentas
 {
     private $fechaventa;
     private $cantidad;
     private $totalV;
-    private $idProd;
+    private $Estadoventa;
+    private $cliente;
+    private $producto;
     private $Factura;
 
-    public function __construct($fechaventa, $cantidad, $id, $idProd, $Factura)
+    public function __construct($fechaventa, $cantidad, $totalV, $Estadoventa, $cliente, $producto, $Factura)
     {
         $this->fechaventa = $fechaventa;
         $this->cantidad = $cantidad;
-        $this->_id = $id;
-        $this->idProd = $idProd;
+        $this->totalV = $totalV;
+        $this->Estadoventa = $Estadoventa;
+        $this->cliente = $cliente;
+        $this->producto = $producto;
         $this->Factura = $Factura;
     }
 
-    private function Resultado()
+    public function InsertandoVenta()
     {
-        $_idprod = $this->idProd;
+        $_fecVenta = $this->fechaventa;
+        $_cantidadU = $this->cantidad;
+        $_Total = $this->totalV;
+        $_EstadoVenta = $this->Estadoventa;
+        $_id = $this->cliente;
+        $_idprod = $this->producto;
+        $_idfactura = $this->Factura;
+        require_once 'Conexion.php';
         $conexion = new Conexion();
-        $consulta = mysqli_query($conexion->EstablecerConexion(), "SELECT * FROM productos WHERE idprod = '$_idprod'");
-        $total = mysqli_fetch_array($consulta);
-        $resultado = $total['precioVenta'] * $this->cantidad;
-        $this->totalV = $resultado;
-    }
-
-    public function InsertarVenta(){
-        $fechaventa = $this->fechaventa;
-        $cantidad = $this->cantidad;
-        $totalV = $this->totalV;
-        $id = $this->_id;
-        $idProd = $this->idProd;
-        $Factura = $this->Factura;
-        $conexion = new Conexion();
-        $conexion->EstablecerConexion()->query("INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura)
-        VALUES('$fechaventa','$cantidad','$totalV','$id','$idProd','$Factura'");
-        echo "Se ingreso correctamente";
-
+        $conexion->EstablecerConexion()->query("INSERT INTO venta(fechaventa, cantidad, totalV, Estadoventa, cliente, producto, Factura) 
+        VALUES('$_fecVenta','$_cantidadU','$_Total','$_EstadoVenta','$_id','$_idprod','$_idfactura')");
+        echo "Venta ingresada, Total: " . $_Total . "<br>";
+        echo "el Numero de Factura es: <b>" . $_idfactura . "</b>";
     }
 }
-    INSERT INTO venta(fechaventa, cantidad, totalV, cliente, producto, Factura) 
-    VALUES('$_fecVenta','$_cantidadU','$_Total','$_id','$_idprod','$_idfactura'
-*/

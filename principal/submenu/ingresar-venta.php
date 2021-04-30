@@ -58,25 +58,14 @@ include("../../conexiones/abrir.php");
             <?php
 
 
-            //insertar ventas en la factura
+            //insertar ventas en la factura 
             if (isset($_POST['btningresarVenta'])) {
-                $_fecVenta = $_POST['fechaventa'];
-                $_cantidadU = $_POST['CantidadUnidad'];
-                $_EstadoVenta = $_POST['EstadoVenta'];
-                $_id = $_GET['id'];
-                $_idprod = $_POST['idprod'];
-                require_once '../../clases/ConsultarValorVentaProducto.php';//Clase que consulta el valor del producto a vender
-                $ValorVenta = new ConsultarValorVentaProducto($_idprod);//creando el objeto
-                $_Total = $ValorVenta->ValorVentaProducto()['precioVenta'] * $_cantidadU;//haciendo calculo por la cantidad de unidades
-
-                $_idfactura = $_GET['idfactura'];
-                $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, Estadoventa, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$_Total','$_EstadoVenta','$_id','$_idprod','$_idfactura')");
-                echo "Venta ingresada, Total: " . $_Total . "<br>";
-                echo "el Numero de Factura es: <b>" . $_idfactura . "</b>";
-                //require_once '../../clases/IngresarVentas.php';
-                //$IngresarVenta = new IngresarVentas($_POST['fechaventa'], $_POST['CantidadUnidad'], $_GET['id'], $_POST['idprod'], $_GET['idfactura']);
-                //$IngresarVenta->InsertarVenta();
-
+                require_once '../../clases/ConsultarValorVentaProducto.php'; //Clase que consulta el valor del producto a vender
+                $ValorVenta = new ConsultarValorVentaProducto($_POST['idprod']); //Creando el objeto
+                $_Total = $ValorVenta->ValorVentaProducto()['precioVenta'] * $_POST['CantidadUnidad']; //haciendo calculo por la cantidad de unidades
+                require_once '../../clases/IngresarVentas.php';//importando clase IngresarVenta
+                $IngresarVenta = new IngresarVentas($_POST['fechaventa'], $_POST['CantidadUnidad'],$_Total, $_POST['EstadoVenta'], $_GET['id'], $_POST['idprod'], $_GET['idfactura']);// enviando parametros por metodo post al objeto insertar venta
+                $IngresarVenta->InsertandoVenta();//llamando el objeto insertar venta
             ?>
                 <form action="Facturas.php?criterio2=<?php echo $_idfactura; ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger"><i class="fas fa-wallet"></i></button>
