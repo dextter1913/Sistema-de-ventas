@@ -65,13 +65,10 @@ include("../../conexiones/abrir.php");
                 $_EstadoVenta = $_POST['EstadoVenta'];
                 $_id = $_GET['id'];
                 $_idprod = $_POST['idprod'];
-                //$consulta = mysqli_query($conexion, "SELECT * FROM productos WHERE idprod = '$_idprod'");
-                //$valorP = mysqli_fetch_array($consulta);
-                //$_Total = $valorP['precioVenta'] * $_cantidadU;
-                require_once '../../clases/ConsultarValorVentaProducto.php';
-                $ValorVenta = new ConsultarValorVentaProducto($_idprod);
-                echo $ValorVenta->ValorVentaProducto()['precioVenta'];
-                
+                require_once '../../clases/ConsultarValorVentaProducto.php';//Clase que consulta el valor del producto a vender
+                $ValorVenta = new ConsultarValorVentaProducto($_idprod);//creando el objeto
+                $_Total = $ValorVenta->ValorVentaProducto()['precioVenta'] * $_cantidadU;//haciendo calculo por la cantidad de unidades
+
                 $_idfactura = $_GET['idfactura'];
                 $conexion->query("INSERT INTO venta(fechaventa, cantidad, totalV, Estadoventa, cliente, producto, Factura) VALUES('$_fecVenta','$_cantidadU','$_Total','$_EstadoVenta','$_id','$_idprod','$_idfactura')");
                 echo "Venta ingresada, Total: " . $_Total . "<br>";
